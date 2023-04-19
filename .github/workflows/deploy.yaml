@@ -15,7 +15,7 @@ jobs:
         with:
           node-version: '16.x'
       - name: Install Dependencies
-        run: npm ci
+        run: npm run ci
       - name: Build angular application
         run: npm buildci
       - name: Archive build
