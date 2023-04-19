@@ -9,19 +9,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-      uses: actions/checkoutv3
+        uses: actions/checkoutv3
       - name: Install NodeJS
-      uses: actions/setup-node@v3
-      with:
-        node-version: '16.x'
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16.x'
       - name: Install Dependencies
-      run: npm ci
+        run: npm ci
       - name: Build angular application
-      run: npm buildci
+        run: npm buildci
       - name: Archive build
-      if: success()
-        uses: actions/upload-artifact@v1
-          with:
-            name: deploy_dist
-            path: dist
+        if: success()
+          uses: actions/upload-artifact@v1
+            with:
+             name: deploy_dist
+             path: dist
 
