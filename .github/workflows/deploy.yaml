@@ -15,9 +15,9 @@ jobs:
         with:
           node-version: '16.x'
       - name: Install Dependencies
-        run: npm run ci
+        run: npm ci
       - name: Build angular application
-        run: npm buildci
+        run: npm run buildci
       - name: Archive build
         if: success()
         uses: actions/upload-artifact@v1
